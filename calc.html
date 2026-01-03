@@ -97,6 +97,29 @@
             margin: 10px 0; /* Отступ по вертикали */
         }
 
+        .xp-display {
+            width: 372px;
+            height: 30px;
+            border: 2px solid #778899;
+            background-color: #FFFFFF;
+            color: black;
+            text-align: right; /* Текст обычно выровнен вправо */
+            font-size: 18px;
+        }
+
+        #square {
+            width: 30px;
+            height: 30px;
+            margin-top: 15px;
+            margin-left: 15px;
+            /*border: 2px solid #FFFFFF;*/
+            box-shadow:
+            /* 1. Темная тень (INSET) в левом верхнем углу */
+            inset 2px 2px 5px rgba(128, 128, 128, 0.7),
+            /* 2. Светлая тень (INSET) для противоположной стороны */
+            inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+        }
+
     </style>
 </head>
 <body>
@@ -119,6 +142,16 @@
             </div>
             <div class="line">               
             </div>
+            <div style=text-align:center>
+                <input type="text" 
+                       class="display xp-display" 
+                       id="display" 
+                       disabled>
+            </div>
+            <div>
+                <img id="square">
+            </div>
+            
         </div>
     </div>
 </body>
