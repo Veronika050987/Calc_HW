@@ -108,18 +108,57 @@
         }
 
         #square {
-            width: 30px;
-            height: 30px;
-            margin-top: 15px;
-            margin-left: 15px;
+            width: 40px;
+            height: 40px;
+            margin: 0 15px 0 15px;
+            /*   margin-left: 15px;*/
             /*border: 2px solid #FFFFFF;*/
             box-shadow:
             /* 1. Темная тень (INSET) в левом верхнем углу */
             inset 2px 2px 5px rgba(128, 128, 128, 0.7),
             /* 2. Светлая тень (INSET) для противоположной стороны */
             inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            vertical-align: top;
         }
 
+        /* Базовый контейнер в одну строку */
+        .row {
+            display: inline-flex;
+            align-items: flex-start; /* выравниваем по верхнему краю */
+            margin-top: 15px; /* отступ сверху */
+            gap: 0; /* управляем отступами между элементами ниже в конкретных правилах */
+        }
+
+        .action-btn {
+            width: 90px;
+            height: 40px;
+            margin-left: 15px;
+            background-color: white;
+            color: red;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid #2F4F4F;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            box-sizing: border-box;
+            box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2) inset;
+        }
+
+            /* Фокус для доступности (опционально) */
+            .action-btn:focus {
+                outline: 3px solid #3498db;
+                outline-offset: 2px;
+            }
+
+        /* Убираем лишний вертикальный отступ у тела, если нужно встраивать в страницу */
+        body {
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
@@ -138,22 +177,23 @@
         <!-- ----------------------------------------------- -->
         <div class="client-rect">
             <div class="edit-view-help">
-                <u>E</u>dit <u>V</u>iew <u>H</u>elp                
+                <u>E</u>dit <u>V</u>iew <u>H</u>elp
             </div>
-            <div class="line">               
+            <div class="line">
             </div>
             <div style=text-align:center>
-                <input type="text" 
-                       class="display xp-display" 
-                       id="display" 
+                <input type="text"
+                       class="display xp-display"
+                       id="display"
                        disabled>
             </div>
-            <div>
-                <img id="square">
-                <button class="backspace"></button>
-                <button class="CE"></button>
-                <button class="C"></button>
+            <div class="row" aria-label="toolbar">
+                <button id="square" aria-label="square"></button>
+                <button class="action-btn backspace" aria-label="Backspace">Backspace</button>
+                <button class="action-btn CE" aria-label="Clear Entry">CE</button>
+                <button class="action-btn C" aria-label="Clear">C</button>
             </div>
+
         </div>
     </div>
 </body>
