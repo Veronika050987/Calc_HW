@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Калькулятор Windows-XP</title>
+    <link rel="stylesheet" href="calc.css">
+    <style>
+        body {
+            background-image: url("bliss.jpg");
+            background-size: cover;
+            font-family: Tahoma;
+            text-shadow: 1px 1px black;
+        }
+
+        .main-window {
+            border: solid 1px;
+            width: 400px;
+            height: 360px;
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .title-bar {
+            width: 100%;
+            height: 38px;
+            background-color: blue;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-bar-left-side {
+            display: flex;
+        }
+
+        #app-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .title-bar button {
+            width: 24px;
+            height: 24px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        .hide {
+            background-color: blue;
+            font-size: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .client-rect {
+            background-color: rgb(235,233,216);
+            width: 100%;
+            height: 322px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-window">
+        <div class="title-bar">
+            <div class="title-bar-left-side">
+                <img id="app-icon" src="CalcXP.ico">
+                <div>- Калькулятор</div>
+            </div>
+            <div>
+                <button class="hide-button">_</button>
+                <button class="restore-button">□</button>
+                <buttonclass class="close-button">X</buttonclass="close-button">
+            </div>
+        </div>
+        <!-- ----------------------------------------------- -->
+        <div class="client-rect"></div>
+    </div>
+</body>
+</html>
