@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Калькулятор Windows-XP</title>
-    <!--<link rel="stylesheet" href="calc.css">-->
-    <style>
+    <link rel="stylesheet" href="calc.css">
+    <!--<style>
         body {
             background-image: url("bliss.jpg");
             background-size: cover;
@@ -159,7 +159,7 @@
             margin: 0;
             padding: 0;
         }
-    </style>
+    </style>-->
 </head>
 <body>
     <div class="main-window">
@@ -169,8 +169,8 @@
                 <div>- Calculator</div>
             </div>
             <div>
-                <button class="hide-button">_</button>
-                <button class="restore-button">□</button>
+                <button class="hide-restore-button">_</button>
+                <button class="hide-restore-button">□</button>
                 <button class="close-button">X</button="close-button">
             </div>
         </div>
@@ -186,6 +186,12 @@
                        class="display xp-display"
                        id="display"
                        disabled>
+            </div>
+            <div class="row" aria-label="toolbar">
+                <button id="square" aria-label="square"></button>
+                <button class="action-btn backspace" aria-label="Backspace">Backspace</button>
+                <button class="action-btn CE" aria-label="Clear Entry">CE</button>
+                <button class="action-btn C" aria-label="Clear">C</button>
             </div>
             <div class="row" aria-label="toolbar">
                 <button id="square" aria-label="square"></button>

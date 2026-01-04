@@ -1,4 +1,4 @@
-﻿﻿body {
+﻿body {
     background-image: url("bliss.jpg");
     background-size: cover;
     font-family: Tahoma;
@@ -8,7 +8,7 @@
 .main-window {
     border: solid 1px;
     width: 400px;
-    height: 360px;
+    height: 380px;
     position: absolute;
     left: 25px;
     top: 25px;
@@ -38,12 +38,128 @@
 }
 
 .title-bar button {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    border: 2px solid #FFFFFF;
+    font-size: 15px;
+    line-height: 1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: inset -0px -3px 10px 1px white;
+}
+
+.hide-restore-button {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.close-button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
 }
 
 .client-rect {
     background-color: rgb(235,233,216);
     width: 100%;
-    height: 322px;
+    height: 342px;
+}
+
+.edit-view-help {
+    text-shadow: 0px 0px;
+    margin-left: 5px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    /* Имитация утопленной линии Windows XP (используя градиент или тени) */
+    background-color: #FFFFF0; /* Светлый фон */
+    /*border-top: 1px solid #FFFFFF;*/ /* Имитация света сверху */
+    /*border-bottom: 1px solid #808080;*/ /* Имитация тени снизу */
+    margin: 10px 0; /* Отступ по вертикали */
+}
+
+.xp-display {
+    width: 372px;
+    height: 30px;
+    border: 2px solid #778899;
+    background-color: #FFFFFF;
+    color: black;
+    text-align: right; /* Текст обычно выровнен вправо */
+    font-size: 18px;
+}
+
+#square {
+    width: 40px;
+    height: 40px;
+    margin: 0 15px 0 15px;
+    /*   margin-left: 15px;*/
+    /*border: 2px solid #FFFFFF;*/
+    box-shadow:
+    /* 1. Темная тень (INSET) в левом верхнем углу */
+    inset 2px 2px 5px rgba(128, 128, 128, 0.7),
+    /* 2. Светлая тень (INSET) для противоположной стороны */
+    inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Базовый контейнер в одну строку */
+.row {
+    display: inline-flex;
+    align-items: flex-start; /* выравниваем по верхнему краю */
+    margin-top: 15px; /* отступ сверху */
+    gap: 0; /* управляем отступами между элементами ниже в конкретных правилах */
+}
+
+.action-btn {
+    width: 90px;
+    height: 40px;
+    margin-left: 15px;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #2F4F4F;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2) inset;
+}
+
+.action-btn {
+    width: 90px;
+    height: 40px;
+    margin-left: 15px;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #2F4F4F;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2) inset;
+}
+
+    /* Фокус для доступности (опционально) */
+    .action-btn:focus {
+        outline: 3px solid #3498db;
+        outline-offset: 2px;
+    }
+
+/* Убираем лишний вертикальный отступ у тела, если нужно встраивать в страницу */
+body {
+    margin: 0;
+    padding: 0;
 }
