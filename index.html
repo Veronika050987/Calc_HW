@@ -1,231 +1,39 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Калькулятор Windows-XP</title>
-    <link rel="stylesheet" href="calc.css">
-    <!--<style>
-        body {
-            background-image: url("bliss.jpg");
-            background-size: cover;
-            font-family: Tahoma;
-            text-shadow: 1px 1px black;
-        }
-
-        .main-window {
-            border: solid 1px;
-            width: 400px;
-            height: 360px;
-            position: absolute;
-            left: 25px;
-            top: 25px;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-        }
-
-        .title-bar {
-            width: 100%;
-            height: 38px;
-            background-color: blue;
-            border-top-left-radius: 7px;
-            border-top-right-radius: 7px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .title-bar-left-side {
-            display: flex;
-        }
-
-        #app-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        .title-bar button {
-            width: 26px;
-            height: 26px;
-            border: 2px solid #FFFFFF;
-            font-size: 15px;
-            line-height: 1;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            box-shadow: inset -0px -3px 10px 1px white;
-        }
-
-        .hide-button {
-            background-color: blue;
-            color: white;
-            font-weight: bold;
-        }
-
-        .restore-button {
-            background-color: blue;
-            color: white;
-            font-weight: bold;
-        }
-
-        .close-button {
-            background-color: red;
-            color: white;
-            font-weight: bold;
-        }
-
-        .client-rect {
-            background-color: rgb(235,233,216);
-            width: 100%;
-            height: 322px;
-        }
-
-        .edit-view-help {
-            text-shadow: 0px 0px;
-            margin-left: 5px;
-        }
-
-        .line {
-            width: 100%;
-            height: 2px;
-            /* Имитация утопленной линии Windows XP (используя градиент или тени) */
-            background-color: #FFFFF0; /* Светлый фон */
-            /*border-top: 1px solid #FFFFFF;*/ /* Имитация света сверху */
-            /*border-bottom: 1px solid #808080;*/ /* Имитация тени снизу */
-            margin: 10px 0; /* Отступ по вертикали */
-        }
-
-        .xp-display {
-            width: 372px;
-            height: 30px;
-            border: 2px solid #778899;
-            background-color: #FFFFFF;
-            color: black;
-            text-align: right; /* Текст обычно выровнен вправо */
-            font-size: 18px;
-        }
-
-        #square {
-            width: 40px;
-            height: 40px;
-            margin: 0 15px 0 15px;
-            /*   margin-left: 15px;*/
-            /*border: 2px solid #FFFFFF;*/
-            box-shadow:
-            /* 1. Темная тень (INSET) в левом верхнем углу */
-            inset 2px 2px 5px rgba(128, 128, 128, 0.7),
-            /* 2. Светлая тень (INSET) для противоположной стороны */
-            inset -2px -2px 5px rgba(255, 255, 255, 0.8);
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        /* Базовый контейнер в одну строку */
-        .row {
-            display: inline-flex;
-            align-items: flex-start; /* выравниваем по верхнему краю */
-            margin-top: 15px; /* отступ сверху */
-            gap: 0; /* управляем отступами между элементами ниже в конкретных правилах */
-        }
-
-        .action-btn {
-            width: 90px;
-            height: 40px;
-            margin-left: 15px;
-            background-color: white;
-            color: red;
-            font-weight: bold;
-            border-radius: 5px;
-            border: 2px solid #2F4F4F;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            user-select: none;
-            box-sizing: border-box;
-            box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2) inset;
-        }
-
-            /* Фокус для доступности (опционально) */
-            .action-btn:focus {
-                outline: 3px solid #3498db;
-                outline-offset: 2px;
-            }
-
-        /* Убираем лишний вертикальный отступ у тела, если нужно встраивать в страницу */
-        body {
-            margin: 0;
-            padding: 0;
-        }
-    </style>-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mr.Calculator</title>
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono"
+          rel="stylesheet" />-->
+    <link rel="stylesheet" href="calc.css" />
 </head>
 <body>
-    <div class="main-window">
-        <div class="title-bar">
-            <div class="title-bar-left-side">
-                <img id="app-icon" src="CalcXP.ico">
-                <div>- Calculator</div>
-            </div>
-            <div>
-                <button class="hide-restore-button">_</button>
-                <button class="hide-restore-button">□</button>
-                <button class="close-button">X</button="close-button">
-            </div>
-        </div>
-        <!-- ----------------------------------------------- -->
-        <div class="client-rect">
-            <div class="edit-view-help">
-                <u>E</u>dit <u>V</u>iew <u>H</u>elp
-            </div>
-            <div class="line">
-            </div>
-            <div style=text-align:center>
-                <input type="text"
-                       class="display xp-display"
-                       id="display"
-                       disabled>
-            </div>
-            <div class="row" aria-label="toolbar">
-                <button id="square" aria-label="square"></button>
-                <button class="action-btn backspace" aria-label="Backspace">Backspace</button>
-                <button class="action-btn CE" aria-label="Clear Entry">CE</button>
-                <button class="action-btn C" aria-label="Clear">C</button>
-            </div>
-            <div class="row" aria-label="toolbar">
-                <button class="left-buttons" aria-label="Memory Clear">MC</button>
-                <button class="action-btn-1 7" aria-label="7">7</button>
-                <button class="action-btn-1 8" aria-label="8">8</button>
-                <button class="action-btn-1 9" aria-label="9">9</button>
-                <button class="action-btn-2 /" aria-label="Divide">/</button>
-                <button class="action-btn-1 SQRT" aria-label="SQRT">sqrt</button>
-            </div>
-            <div class="row" aria-label="toolbar">
-                <button class="left-buttons" aria-label="Memory Read">MR</button>
-                <button class="action-btn-1 4" aria-label="4">4</button>
-                <button class="action-btn-1 5" aria-label="5">5</button>
-                <button class="action-btn-1 6" aria-label="6">6</button>
-                <button class="action-btn-2 *" aria-label="Multiply">*</button>
-                <button class="action-btn-1 %" aria-label="%">%</button>
-            </div>
-            <div class="row" aria-label="toolbar">
-                <button class="left-buttons" aria-label="Memory Save">MS</button>
-                <button class="action-btn-1 1" aria-label="1">1</button>
-                <button class="action-btn-1 2" aria-label="2">2</button>
-                <button class="action-btn-1 3" aria-label="3">3</button>
-                <button class="action-btn-2 -" aria-label="Substract">-</button>
-                <button class="action-btn-1 1/x" aria-label="1/x">1/x</button>
-            </div>
-            <div class="row" aria-label="toolbar">
-                <button class="left-buttons" aria-label="Memory Add">M+</button>
-                <button class="action-btn-1 0" aria-label="0">0</button>
-                <button class="action-btn-1 +/-" aria-label="Negative">+/-</button>
-                <button class="action-btn-1 ." aria-label=".">.</button>
-                <button class="action-btn-2 +" aria-label="Add">+</button>
-                <button class="action-btn-2 =" aria-label="Result">=</button>
-            </div>
-        </div>
+    <div id="calculator">
+        <div id="result">0</div>
+        <button onclick="cls();">AC</button>
+        <button onclick="num(this.innerHTML);">7</button>
+        <button onclick="num(this.innerHTML);">8</button>
+        <button onclick="num(this.innerHTML);">9</button>
+        <button onclick="calc(this.innerHTML);">/</button>
+        <button onclick="num(this.innerHTML);">4</button>
+        <button onclick="num(this.innerHTML);">5</button>
+        <button onclick="num(this.innerHTML);">6</button>
+        <button onclick="calc(this.innerHTML);">*</button>
+        <button onclick="num(this.innerHTML);">1</button>
+        <button onclick="num(this.innerHTML);">2</button>
+        <button onclick="num(this.innerHTML);">3</button>
+        <button onclick="calc(this.innerHTML);">-</button>
+        <button onclick="num(this.innerHTML);">0</button>
+        <button onclick="num(this.innerHTML);">.</button>
+        <button onclick="total();">=</button>
+        <button onclick="calc(this.innerHTML);">+</button>
+        <div id="smallResult"></div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
